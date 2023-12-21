@@ -32,6 +32,7 @@ public class webBase {
 	public static Screen ss;
 	String URL1 = null;
 	boolean Flag = false;
+	boolean Quit = false;
 
 	public webBase() {
 
@@ -41,14 +42,6 @@ public class webBase {
 			URL1 = "/src/main/java/config/config2.properties";
 		}
 		try {
-
-			/*
-			 * if(Flag=true) { String URL1="/src/main/java/config/config.properties"; } else
-			 * { String URL1="/src/main/java/config/config2.properties"; }
-			 */
-
-			// FileInputStream ip = new FileInputStream(
-			// System.getProperty("user.dir") + "/src/main/java/config/config.properties");
 
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + URL1);
 
@@ -77,8 +70,7 @@ public class webBase {
 
 	private static void initChromeDriver(String appURL) throws InterruptedException {
 		System.out.println("Launching google chrome with new profile..");
-		// System.setProperty("webdriver.chrome.driver", prop.getProperty("driverPath")
-		// + "chromedriver.exe");
+
 		driver = new ChromeDriver();
 		WebDriverManager.chromedriver().setup();
 
@@ -110,7 +102,10 @@ public class webBase {
 
 	@AfterClass
 	public void tearDown() {
-		driver.quit();
+		if (Quit == true) {
+			driver.quit();
+		}
+
 	}
 
 	public WebDriver getDriver() {
@@ -142,22 +137,5 @@ public class webBase {
 			i++;
 		}
 	}
-	/*
-	 * public void addNote(String Note) {
-	 * ExtentTestManager.getTest().log(Status.INFO, "<b>Note-</b>: " + Note + ""); }
-	 */
-//	/**
-//	 * Enter URL as string
-//	 * */
-//	public void HitToURL() {
-//		
-//	}
-//	
-//	
-//	
-//	@Parameters({ "appURL" })
-//	private WebDriver HitToURL1(String appURL) throws InterruptedException {
-//		driver.get(appURL);
-//return driver;
-//	}
+
 }

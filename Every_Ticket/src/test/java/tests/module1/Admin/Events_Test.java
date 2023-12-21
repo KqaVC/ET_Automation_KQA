@@ -1,5 +1,6 @@
 package tests.module1.Admin;
 
+import java.awt.Desktop.Action;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,6 +26,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class Events_Test extends Events_Repo
 
@@ -37,7 +39,6 @@ public class Events_Test extends Events_Repo
 	public void BeforeClass() throws InterruptedException {
 		Sky = new Events_Repo();
 		reusable = new ReusableMethod();
-		// reusable.Sign_In_Mo();
 	}
 
 	@Test(priority = 1, description = "Sing in via mobile number and password.")
@@ -104,6 +105,10 @@ public class Events_Test extends Events_Repo
 
 		Sky.Btn_SelectCurrent_Date.click();
 
+		String Current_Date_Of_basicinfo = Sky.Btn_SelectCurrent_Date.getText();
+
+		System.out.println(Current_Date_Of_basicinfo + "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
+
 		for (int i = 0; i < 4; i++) {
 			Sky.Btn_Next_Month.click();
 		}
@@ -138,11 +143,7 @@ public class Events_Test extends Events_Repo
 		for (int i = 0; i < value.size(); i++) {
 			Sky.Aminities(value.get(i));
 			System.out.println(value.get(i));
-			reusable.SnapShot_And_Step("KKKKKKKK");
 
-			reusable.SnapShot();
-			reusable.Step(1, "AAAAAAA");
-			reusable.Result(1, "LLLLL");
 		}
 
 		reusable.Scroll_Untill_Elmnt(Sky.Chkb_HorizonatalBanner);
@@ -152,25 +153,42 @@ public class Events_Test extends Events_Repo
 
 		Thread.sleep(1000);
 
-		Sky.Brn_Booking_Stop.click();
-
-		Thread.sleep(1000);
-		Sky.Btn_SelectCurrent_Date.click();
-
+		/*
+		 * Sky.Brn_Booking_Stop.click();
+		 * 
+		 * Thread.sleep(1000); Sky.Btn_SelectCurrent_Date.click();
+		 */
 		Thread.sleep(1000);
 		Sky.Btn_Next.click();
 
-		// Event detail page
+		// Calendar tab
 
-		// reusable.eLement_vIsible(Sky.Chkb_AreU_FreeEvet);
+		Thread.sleep(5000);
+		reusable.eLement_vIsible(Sky.Btn_Today_Cal);
 
-		Thread.sleep(1000);
-		Sky.Chkb_AreU_FreeEvet.click();
+		reusable.Scroll_Untill_Elmnt(Sky.Date_Start_Cal);
 
-		Thread.sleep(1000);
-		Sky.Btn_Add_Of_Event_Type.click();
+		Thread.sleep(8000);
+		Actions Aa = new Actions(driver);
+		Aa.click(Sky.Date_Start_Cal).perform();
 
-		Thread.sleep(10000);
-		System.out.println("aaa");
+		Thread.sleep(2000);
+		Aa.doubleClick(Sky.Date_Start_Cal).perform();
+		Thread.sleep(8000);
+
+		// Sky.Date_Start_Cal.click();
+		// Sky.Date_Start_Cal.click();
+
+		// reusable.SnapShot();
+
+		/*
+		 * Thread.sleep(1000); Sky.Chkb_AreU_FreeEvet.click();
+		 * 
+		 * Thread.sleep(1000); Sky.Btn_Add_Of_Event_Type.click();
+		 * 
+		 * Thread.sleep(10000); System.out.println("aaa");
+		 * 
+		 * Thread.sleep(10000);
+		 */
 	}
 }

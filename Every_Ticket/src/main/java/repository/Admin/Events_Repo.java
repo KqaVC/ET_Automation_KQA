@@ -29,20 +29,11 @@ public class Events_Repo extends webBase {
 	@FindBy(xpath = "*//br[@data-cke-filler=\"true\"]")
 	public WebElement TxbA_Description;
 
-	/*
-	 * @FindBy(xpath =
-	 * "/html/body/app-root/app-pages/div/div/div/app-event-add/div/div/div/div/div/div/mat-tab-group/div/mat-tab-body[1]/div/form/div[2]/div/div[1]/mat-form-field/div[1]/div/div[2]/input")
-	 * public WebElement TxbA_Venue;
-	 */
-
 	@FindBy(xpath = "*//input[@placeholder='Enter a location']")
 	public WebElement TxbA_Venue;
 
 	@FindBy(xpath = "*//a[@class='border-animation inline-flex text-base font-semibold text-secondary mt-4 ng-star-inserted']")
 	public WebElement BtnA_AdditionalInf;
-
-	// @FindBy(xpath = " *//input[@aria-invalid='false']")
-	// public WebElement TxbA_SubVenue;
 
 	@FindBy(xpath = "*//input[@formcontrolname='sub_venue']")
 	public WebElement TxbA_SubVenue;
@@ -70,10 +61,6 @@ public class Events_Repo extends webBase {
 
 	@FindBy(xpath = "*//input[@id='mat-mdc-checkbox-8-input']")
 	public WebElement ChkA_Aminities4;
-
-	// @FindBy(xpath =
-	// "/html/body/app-root/app-pages/div/div/app-event-add/mat-tab-group/div/mat-tab-body[1]/div/div/form/mat-card[4]/div/div[1]/div/input")
-	// public WebElement BtnA_Brws_Img1;
 
 	@FindBy(xpath = "*//input[@type='file' and @class='absolute w-full h-full top-0 left-0 opacity-0 z-10 cursor-pointer' and @accept='image/jpeg,image/png,image/jpg,image/svg+xml'][1]")
 	public WebElement BtnA_Brws_Img1;
@@ -105,25 +92,70 @@ public class Events_Repo extends webBase {
 	@FindBy(xpath = "*//p[@class='text-base font-bold text-dark-100 mb-3' and text()=' Select Date Range ']")
 	public WebElement Callll;
 
-	// @FindBy(xpath =
-	// "/html/body/app-root/app-pages/div/div/app-event-add/mat-tab-group/div/mat-tab-body[1]/div/div/form/mat-card[7]/mat-form-field/div[1]/div[2]/div[1]/mat-datepicker-toggle/button")
-	// public WebElement Brn_Booking_Stop;
-
 	@FindBy(xpath = "(//button[@class='mdc-icon-button mat-mdc-icon-button mat-unthemed mat-mdc-button-base' and @aria-label='Open calendar'])[2]")
 	public WebElement Brn_Booking_Stop;
 
-	// button[@class='mdc-icon-button mat-mdc-icon-button mat-unthemed
-	// mat-mdc-button-base' and @aria-label='Open calendar'][2]
 	@FindBy(xpath = "*//span[@class='mdc-button__label' and text()=' Next ']")
 	public WebElement Btn_Next;
-
-	// evet detail page
 
 	@FindBy(xpath = "*//input[@id='mat-mdc-checkbox-65-input']")
 	public WebElement Chkb_AreU_FreeEvet;
 
 	@FindBy(xpath = "*//span[@class='mdc-button__label' and text()=' Add '][1]")
 	public WebElement Btn_Add_Of_Event_Type;
+
+	// Calendar tab:-All emenets//
+
+	@FindBy(xpath = "*//button[@class='px-2 py-1 border border-black rounded' and text()='Today']")
+	public WebElement Btn_Today_Cal;
+
+	@FindBy(xpath = "*//button[@class='px-2 py-1 border border-black rounded' and text()='Next']")
+	public WebElement Btn_Next_Cal;
+
+	@FindBy(xpath = "*//button[@class='px-2 py-1 border border-black rounded' and text()='Prev']")
+	public WebElement Btn_Previous_Cal;
+
+	@FindBy(xpath = "*//p[@class='ng-star-inserted' and text()=' Week ']")
+	public WebElement Btn_Week_Cal;
+
+	@FindBy(xpath = "*//p[@class='border border-white rounded-md bg-[#515969] p-2 px-4 ng-star-inserted' and text()=' Month ']")
+	public WebElement Btn_Month_Cal;
+	
+	
+	
+	@FindBy(xpath = "*//button[@class='primary-btn btn-44' and text()=' Cancel ']")
+	public WebElement Btn_Cancel_Cal;
+	
+	@FindBy(xpath = "*//button[@class='secondary-btn btn-44 ml-2.5' and text()=' Next ']")
+	public WebElement Btn_Next_Of_Page_Cal;
+	
+	
+	
+	@FindBy(xpath = "*//div[@class='cursor-pointer border-b border-r border-l h-40 overflow-y-auto bg-[#fae5ee] ng-star-inserted'][1]")
+	public WebElement Date_Start_Cal;
+	
+	
+	@FindBy(xpath = "*//div[@class='cursor-pointer border-b border-r border-l h-40 overflow-y-auto bg-[#fae5ee] ng-star-inserted'][2]")
+	public WebElement Date_End_Cal;
+	
+	
+	//*//div[@class='cursor-pointer border-b border-r border-l h-40 overflow-y-auto bg-[#fae5ee] ng-star-inserted'][1]
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public void Aminities(WebElement ele) throws InterruptedException {
 		DrpA_Slct_Aminitis.click();

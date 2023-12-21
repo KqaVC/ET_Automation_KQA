@@ -4,9 +4,9 @@
 <listeners>
 		<listener class-name="ListenerSetup.TestListener" />
 	</listeners>
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="tests.module1.Admin.Events_Test"/>
-    </classes>
-  </test> <!-- Test -->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="tests.module1.Admin.Events_Test" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
