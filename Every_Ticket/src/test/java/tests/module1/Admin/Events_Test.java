@@ -171,5 +171,6 @@ public class Events_Test extends Events_Repo
 		Sky.Btn_Add_Of_Event_Type.click();
 
 		Thread.sleep(10000);
+		System.out.println("aaa");
 	}
 }
